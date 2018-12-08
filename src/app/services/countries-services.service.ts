@@ -9,7 +9,9 @@ export class CountriesServicesService {
 
  
   constructor( private http:Http) { }
-
+  /*
+  Invocacion de los web services via http
+   */
   getAll(){
     return this.http.get(`${CONFIG.api}/all`).map(resp=>{return resp.json()});
   }

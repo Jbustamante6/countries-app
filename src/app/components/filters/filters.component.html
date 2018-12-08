@@ -2,11 +2,15 @@
 <hr>
 
 
+<!--Paginador-->
 <div class="text-center animated fadeIn">
   <pagination-controls (pageChange)="p = $event"></pagination-controls>
 </div>
+<!--fin-->
+
 <hr>
 
+<!--Listado de paises-->
 <div class="card-columns animated fadeIn">
   <div class="card" *ngFor="let countrie of countries | paginate: { itemsPerPage: 10, currentPage: p }">
 
@@ -30,7 +34,12 @@
     </div>
   </div>
 </div>
+<!--Fin-->
+
 <hr>
+
+<!--Paginador-->
 <div class="text-center animated fadeIn">
   <pagination-controls (pageChange)="p = $event"></pagination-controls>
 </div>
+<!--fin-->

@@ -23,6 +23,7 @@
     </div>
 </div>
 
+<!--Filtro para busquedas por nombre-->
 <div class="form-group animated fadeIn">
   <label for="exampleInputEmail1">Search Country By Name</label>
   <input type="email" 
@@ -36,12 +37,14 @@
 </div>
 <hr>
 
+<!--Paginador-->
 <div class="text-center animated fadeIn">
   <pagination-controls (pageChange)="p = $event"></pagination-controls>
 </div>
+<!--fin-->
 
 <hr>
-
+<!--Listado de paises-->
 <div class="card-columns animated fadeIn">
   <div class="card" *ngFor="let countrie of countries | filter : searchText  | paginate: { itemsPerPage: 10, currentPage: p }">
     <img class="card-img-top" [src]="countrie.flag | domsecure" alt="Card image cap">
@@ -64,12 +67,19 @@
       </ul>
     </div>
     <div class="card-footer">
+      <!--Captura de click para invocar a funcion que llama el service obteer informacion de cada pais-->
         <button class="btn btn-link" (click)="thisCountry(countrie.name, countrie.latlng[0], countrie.latlng[1])">View info</button>
     </div>
   </div>
 </div>
+<!--fin-->
+
 <hr>
+
+<!--Paginador-->
 <div class="text-center animated fadeIn">
   <pagination-controls (pageChange)="p = $event"></pagination-controls>
 </div>
+<!--fin-->
+
 

@@ -14,6 +14,11 @@ export class FiltersComponent implements OnInit {
   constructor(private route: ActivatedRoute, private _countriesServices:CountriesServicesService) { }
 
   ngOnInit() {
+    /*
+    1. Captura de datos cargados en el quiery de la URL
+    2. Carga del servicio en caso de que haya parametros añadido en la ur
+    3. Captura de los datos, para mostrar en el template
+     */
     this.route.queryParams.subscribe(params => {
       if(params.data!=""){
         this._countriesServices.getFilter(params.data).subscribe(data=>{

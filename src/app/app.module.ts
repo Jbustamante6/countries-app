@@ -34,11 +34,11 @@ import { FilterPipe } from './pipes/filter.pipe';
     FormsModule,
     NgxPaginationModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyBg2Wrv0zHJ8bvXK4CA7Tp8e6r6or2R1rc'
+      apiKey: 'AIzaSyBg2Wrv0zHJ8bvXK4CA7Tp8e6r6or2R1rc'// api de google
     })
   ],
   providers: [
-    CountriesServicesService
+    CountriesServicesService 
   ],
   bootstrap: [AppComponent]
 })

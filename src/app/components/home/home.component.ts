@@ -6,7 +6,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/fromEvent';
 import { MapsComponent } from '../maps/maps.component';
 
-declare var $:any;
+declare var $:any;//declaracion de la variable de jquery
 
 @Component({
   selector: 'app-home',
@@ -14,6 +14,7 @@ declare var $:any;
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  //caaptura de los componentes hijos
   @ViewChild('infoCountry') infoCountry:InfoCountryComponent;
   @ViewChild('maps') maps:MapsComponent;
 
@@ -25,15 +26,15 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
        
     this._countriesServices.getAll().subscribe(data=>{
-      this.countries=data;
+      this.countries=data; //captura de los datos
     })
 
   }
   thisCountry(country:string, lat:number, long:number){
-    this.country=country;
-    this.infoCountry.change(this.country);
+    this.country=country; //seleccion de nombre para mostrar en el modal y enviar la peticion a los servicios
+    this.infoCountry.change(this.country);// envio de parametro y ejecucion de funcion de componenes hijos
     this.maps.changeLtLng(lat, long);
-    $('#exampleModal').modal('show')
+    $('#exampleModal').modal('show'); //Apertura del modal
   }
 
 

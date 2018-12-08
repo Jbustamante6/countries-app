@@ -9,7 +9,7 @@ export class DomsecurePipe implements PipeTransform {
   constructor (private domSanitizer:DomSanitizer){}
 
   transform(value: string): any {
-    return this.domSanitizer.bypassSecurityTrustResourceUrl(value);
+    return this.domSanitizer.bypassSecurityTrustResourceUrl(value);//evaluacion de seguirdad para hacer uso de elemtos externos http en el dom
   }
 
 }

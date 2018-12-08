@@ -19,6 +19,9 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
   }
 
+  /*
+  Funcion que hace el redireccionamiento a os filtros, antes capturando los campos deseados a mostrar
+   */
   fiter(){
     let queryString:string="";
     if(this.name){
