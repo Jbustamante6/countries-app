@@ -1,0 +1,29 @@
+<div class="container animated fadeIn" *ngIf="country">
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item px-0 py-1">Top level domain: 
+      <ul >
+        <li *ngFor="let domain of country.topLevelDomain">
+          {{domain}}
+        </li>
+      </ul>
+    </li>
+    <li class="list-group-item px-0 py-1">Alpha Code: {{country.alpha3Code}}</li>
+    <li class="list-group-item px-0 py-1">Full name: {{country.altSpellings[1]}}</li>
+    <li class="list-group-item px-0 py-1">Full name: {{country.subregion}}</li>
+    <li class="list-group-item px-0 py-1">Population: {{country.population}}</li>
+    <li class="list-group-item px-0 py-1">Borders: 
+      <ul>
+        <li *ngFor="let border of country.borders">
+          {{border}}
+        </li>
+      </ul>
+    </li>
+    <li class="list-group-item px-0 py-1">Languages name
+      <ul>
+        <li *ngFor="let lang of country.languages">
+          {{lang.name}}
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>

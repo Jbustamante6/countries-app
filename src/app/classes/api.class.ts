@@ -1,3 +1,3 @@
 export class CONFIG{
-  public static api = 'https://restcountries.eu/rest/v2/'
+  public static api = 'https://restcountries.eu/rest/v2'
 }

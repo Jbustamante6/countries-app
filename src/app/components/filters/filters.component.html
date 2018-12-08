@@ -1,0 +1,36 @@
+<h2 class="animated fadeIn">List of countries</h2>
+<hr>
+
+
+<div class="text-center animated fadeIn">
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
+<hr>
+
+<div class="card-columns animated fadeIn">
+  <div class="card" *ngFor="let countrie of countries | paginate: { itemsPerPage: 10, currentPage: p }">
+
+    <div class="card-body">
+      <h5 class="card-title" *ngIf="countrie.name"><strong>{{countrie.name}}</strong></h5>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item px-0 py-1" *ngIf="countrie.capital">Capital city: {{countrie.capital}}</li>
+        <li class="list-group-item px-0 py-1" *ngIf="countrie.region">Continent: {{countrie.region}}</li>
+        <li class="list-group-item px-0 py-1" *ngIf="countrie.languages">
+          Languages:
+          <ul>
+            <li class="text-uppercase font-italic" *ngFor="let lang of countrie.languages">{{lang.iso639_1}}</li>
+          </ul>
+        </li>
+        <li class="list-group-item px-0 py-1" *ngIf="countrie.callingCodes">Calling Codes: 
+            <ul>
+              <li class="text-uppercase font-italic" *ngFor="let callCode of countrie.callingCodes">{{callCode}}</li>
+            </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<hr>
+<div class="text-center animated fadeIn">
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
